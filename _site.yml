@@ -5,8 +5,6 @@ navbar:
   right:
     - text: "Resume"
       href: resumepage.html
-    - text: "Google" 
-      href: https://www.google.com
     - icon: fa-envelope fa-lg
       href: mailto:<jl5297@cumc.columbia.com>
     - icon: fa-github fa-lg
