@@ -14,7 +14,7 @@
 Hi! I'm Jun Lu, a first-year master student in biostatistics at Columbia Univerisity. I'm just getting involve into the field of public health. You can know more about me on this website.
 
 ## Dashboard
-This is my [dashboard](dashboard.html) for homework.
+This is my [dashboard](dashboard.html) for homework 4.
 
 ## Links
 * [My Resume](resumepage.html)
