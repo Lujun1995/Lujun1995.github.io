@@ -1,0 +1,19 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "Resume"
+      href: resumepage.html
+    - text: "Google" 
+      href: https://www.google.com
+    - icon: fa-envelope fa-lg
+      href: mailto:<jl5297@cumc.columbia.com>
+    - icon: fa-github fa-lg
+      href: https://github.com/Lujun1995
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/jun-lu5297/
+
+output:
+  html_document:
+    theme: flatly
