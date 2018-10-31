@@ -4,7 +4,7 @@ navbar:
   title: "Home"
   right:
     - text: "Resume"
-      href: resumepage.html
+      href: resume.html
     - icon: fa-envelope fa-lg
       href: mailto:<jl5297@cumc.columbia.com>
     - icon: fa-github fa-lg
