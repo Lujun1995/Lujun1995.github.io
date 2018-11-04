@@ -17,7 +17,7 @@ Hi! I'm Jun Lu, a first-year master student in biostatistics at Columbia Univeri
 This is my [dashboard](dashboard.html) for homework 4.
 
 ## Links
-* [My Resume](resumepage.html)
+* [My Resume](resume.html)
 * [My Linkedin](https://www.linkedin.com/in/jun-lu5297/)
 * [My Coursera](https://www.coursera.org/user/7853d40371ea732488be94b5396eb4d4)
 * [My Github](https://github.com/Lujun1995)
