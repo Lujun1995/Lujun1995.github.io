@@ -1,24 +1,41 @@
-<div style="margin-bottom:50px;">
+<div style="margin-bottom:40px;">
 
 </div>
 <center>
-<img src="png/1.png" style="width:75%">
+<img src="png/my.png" style="width:75%">
 </center>
     
-    
-<div style="margin-bottom:50px;">    
+<div style="margin-bottom:60px;">    
+</div>
+ 
+ <font size="5" color="SteelBlue  ">
+ Something about Me
+ </font>
+ 
+Hi! I'm Jun Lu, a first-year master student in biostatistics at Columbia Univerisity. I'm learning many interesting and useful biostatistical courses during my master program, such as *Data Science I & II*, *Biostatistical Methods I & II* and *Statistical Inference*. I'm also learning *machine learning* and *deep learning* by myself.
+
+In the future,  I want to start my career as a biostatistician or a statistician.
+
+<div style="margin-bottom:30px;">    
 </div>
 
-## Introduction
+ <font size="5" color="SteelBlue  ">
+ Something about This Website
+ </font>
 
-Hi! I'm Jun Lu, a first-year master student in biostatistics at Columbia Univerisity. I'm just getting involve into the field of public health. You can know more about me on this website.
+I'm trying to summarize what I have learnt and what I have done and put some of them on this website. However, I'm still working on it, so there are a lot of blank space on this site now. After completing, you can see many projects and homework I have done before here. 
 
-## Dashboard
-This is my [dashboard](dashboard.html) for homework 4.
+Hope the information on this website could help you know me better.
 
-## Links
-* [My Resume](resume.html)
-* [My Linkedin](https://www.linkedin.com/in/jun-lu5297/)
-* [My Coursera](https://www.coursera.org/user/7853d40371ea732488be94b5396eb4d4)
-* [My Github](https://github.com/Lujun1995)
-* [My Email](mailto:<jl5297@cumc.columbia.com>)
+<div style="margin-bottom:30px;">    
+</div>
+
+ <font size="5" color="SteelBlue  ">
+ Contact Information
+ </font>
+ 
+Email: jl5297@cumc.columbia.edu    
+
+Phone Number: 646 338 0835
+
+Feel free to contact me!

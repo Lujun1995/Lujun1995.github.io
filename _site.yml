@@ -1,7 +1,31 @@
-name: "Yay internet!"
+name: "Jun Lu!"
 output_dir: "."
 navbar:
   title: "Home"
+  left:
+    - text: "Projects"
+      menu:
+        - text: "Phthalate-obesity"
+          href: https://hh2767.github.io/p8105_final.github.io/index.html
+        - text: "Predict Cancer Mortality"
+          href: cancer.html
+        - text: "Machine Learning Finding Dononrs"
+          href: machinelearning.html
+        - text: "Deep Learning Images Classification "
+          href: deeplearning.html
+        
+    - text: "Programming"
+      menu:
+        - text: "R"
+          href: R_programming.html
+        - text: "SAS"
+        - text: "Python"
+    - text: "Statistical Methods"
+      menu:
+        - text: "Generalized Linear Models"
+        - text: "Survival Analysis"
+        - text: "Longitudinal Analysis"
+      
   right:
     - text: "Resume"
       href: resume.html
@@ -15,3 +39,5 @@ navbar:
 output:
   html_document:
     theme: flatly
+    include:
+      after_body: footer.html

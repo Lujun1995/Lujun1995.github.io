@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>R Programming</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,9 +19,15 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -166,6 +172,101 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -259,13 +360,53 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">R Programming</h1>
 
 </div>
 
 
-<div id="junlu.github.io" class="section level1">
-<h1>junlu.github.io</h1>
-<p>This is a github repo for my website</p>
+<div style="margin-bottom:30px;">
+
+</div>
+<center>
+<img src="png/data_pipeline.png" style="width:70%">
+</center>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>I learned R by taking <em>Data Science I</em> (P8105) last semester which is taught by Dr. Jeff Goldsmith. In this course, I learnt how to do data manipulation and data visualization by R. Besides, I have taken Data Science Specialization on Cousera which is developed by Johns Hopkins University.</p>
+During this semester, I’ m taking <em>Data Science II</em> (P8106) which is taught by Dr. Yifei Sun, learning something about data modeling.
+<div style="margin-bottom:30px;">
+
+</div>
+</div>
+<div id="homework" class="section level2">
+<h2>Homework</h2>
+<p>I keep all my homework under my github account, because I find that it is useful and efficient for me to refresh my memory by referring to my previous homework.</p>
+<div style="margin-bottom:20px;">
+
+</div>
+<div id="ds-i-hw" class="section level3">
+<h3>DS I HW</h3>
+<ul>
+<li><p>HW 1 <a href="https://github.com/Lujun1995/p8105_hw1_jl5297/blob/master/p8105_hw1_jl5297.md">Use R Markdown to write reproducible reports, GitHub for version</a></p></li>
+<li><p>HW 2 <a href="https://github.com/Lujun1995/p8105_hw2_jl5297/blob/master/p8105_hw2_jl5297.md">Practice data wrangling and tidy data</a></p></li>
+<li><p>HW 3 <a href="https://github.com/Lujun1995/p8105_hw3_jl5297/blob/master/p8105_hw3_jl5297.md">Practice data visualization</a></p></li>
+<li><p>HW 4 <a href="https://github.com/Lujun1995/p8105_hw4_jl5297">Dashboard and ploty</a></p></li>
+<li><p>HW 5 <a href="https://github.com/Lujun1995/p8105_hw5_jl5297/blob/master/p8105_hw5_jl5297.md">Pactice iteration by using map</a></p></li>
+<li><p>HW 6 <a href="https://github.com/Lujun1995/p8105_hw6_jl5297/blob/master/p8105_hw6_jl5297.md">Fit models</a></p></li>
+<li><p>Midterm Project <a href="https://github.com/Lujun1995/p8105_mtp_jl5297/blob/master/p8105_mtp_jl5297.md">Physical Activity Analysis</a></p></li>
+<li><p>Final Project <a href="https://hh2767.github.io/p8105_final.github.io/index.html">Phthalate-obesity</a></p></li>
+</ul>
+<div style="margin-bottom:30px;">
+
+</div>
+</div>
+<div id="ds-ii-hw" class="section level3">
+<h3>DS II HW</h3>
+<ul>
+<li>HW 1 <a href="https://github.com/Lujun1995/DS_HW1_LinearRegression/blob/master/HW1.md">Linear Model, Lasso, Ridge and Principal Component Regression</a></li>
+</ul>
+</div>
 </div>
 
 <br><br>
@@ -278,6 +419,8 @@ $(document).ready(function () {
 </footer>
 
 
+</div>
+</div>
 
 </div>
 

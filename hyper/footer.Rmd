@@ -1,0 +1,8 @@
+<br><br>
+<footer>
+  <center>
+  <img src="stickers.png" alt="stickers" style="width:60%">
+  <br>
+  <p class="copyright text-muted" align="center">Copyright &copy; 2019 Jun Lu</p>
+  </center>
+</footer>

@@ -1,0 +1,48 @@
+---
+title: "Predict Cancer Mortality"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<div style="margin-bottom:50px;">
+
+</div>
+
+<center>
+<img src="png/Cancer.png" style="width:50%">
+</center>
+
+<div style="margin-bottom:50px;">
+
+</div>
+
+## Overview
+Cancer is among the leading causes of death globally. There are many factors related to cancer mortality, including socioeconomic status, age, race and so on. In this project, we aimed to build a multiple linear regression model to predict cancer mortalities of different counties in the United States. In the final model, we chose six variables mainly related to education level, race, employment status, income or incidence rate as our predictors. As a result, our final model has a certain predictive ability.
+
+<div style="margin-bottom:50px;">
+
+</div>
+
+## Data Source
+The data for this project were aggregated from multiple sources including American Community Survey census.gov, clinicaltrials.gov, and cancer.gov. The final dataset contains data for mean per capita(100,000) cancer mortalities and related demographic information from 3047 counties. 
+
+<div style="margin-bottom:50px;">
+
+</div>
+
+## Conclusion
+Based on criterions and parsimony, we choose the model with 6 predictors which has the smallest BIC, comparatively larger adjusted R-Squared and smaller subset size. Our final regression model contains 6 variables mainly related to education level, race, employment status, income or incidence rate. 48.14% of the dependent variable variation is explained by this multiple linear regression model (R-squared 48.14%; Adjusted R-squared 48.04%).
+
+<div style="margin-bottom:50px;">
+
+</div>
+
+## Related Links
+* You can click [here](BM_group17.pdf) to see the full report
+* Corresponding data and code are under [this github repo](https://github.com/kangkangz77/bm_final_project)

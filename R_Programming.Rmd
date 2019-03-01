@@ -1,0 +1,59 @@
+---
+title: "R Programming"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+<div style="margin-bottom:30px;">    
+</div>
+
+
+<center>
+<img src="png/data_pipeline.png" style="width:70%">
+</center>
+
+## Overview
+I learned R by taking *Data Science I* (P8105)  last semester which is taught by Dr. Jeff Goldsmith. In this course, I learnt how to do data manipulation and data visualization by R. Besides, I have taken Data Science Specialization on Cousera which is developed by Johns Hopkins University.
+
+During this semester, I' m taking *Data Science II* (P8106) which is taught by Dr. Yifei Sun, learning something about data modeling.
+<div style="margin-bottom:30px;">    
+</div>
+
+## Homework
+I keep all my homework under my github account, because I find that it is useful and efficient for me to refresh my memory by referring to my previous homework.
+
+<div style="margin-bottom:20px;">    
+</div>
+
+### DS I HW
+* HW 1 
+[Use R Markdown to write reproducible reports, GitHub for version](https://github.com/Lujun1995/p8105_hw1_jl5297/blob/master/p8105_hw1_jl5297.md)
+
+* HW 2
+[Practice data wrangling and tidy data](https://github.com/Lujun1995/p8105_hw2_jl5297/blob/master/p8105_hw2_jl5297.md)
+
+* HW 3
+[Practice data visualization](https://github.com/Lujun1995/p8105_hw3_jl5297/blob/master/p8105_hw3_jl5297.md)
+    
+* HW 4
+[Dashboard and ploty](https://github.com/Lujun1995/p8105_hw4_jl5297)
+
+* HW 5
+[Pactice iteration by using map](https://github.com/Lujun1995/p8105_hw5_jl5297/blob/master/p8105_hw5_jl5297.md)
+    
+* HW 6
+[Fit models](https://github.com/Lujun1995/p8105_hw6_jl5297/blob/master/p8105_hw6_jl5297.md)
+
+* Midterm Project
+[Physical Activity Analysis](https://github.com/Lujun1995/p8105_mtp_jl5297/blob/master/p8105_mtp_jl5297.md)
+
+* Final Project
+[Phthalate-obesity](https://hh2767.github.io/p8105_final.github.io/index.html)
+
+<div style="margin-bottom:30px;">    
+</div>
+
+### DS II HW
+* HW 1
+[Linear Model, Lasso, Ridge and Principal Component Regression](https://github.com/Lujun1995/DS_HW1_LinearRegression/blob/master/HW1.md)
