@@ -17,7 +17,7 @@ navbar:
     - text: "Programming"
       menu:
         - text: "R"
-          href: R_programming.html
+          href: r.html
         - text: "SAS"
         - text: "Python"
     - text: "Statistical Methods"
