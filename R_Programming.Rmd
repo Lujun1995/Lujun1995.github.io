@@ -5,7 +5,13 @@ output:
     toc: true
     toc_float: true
 ---
+<div style="margin-bottom:30px;">    
+</div>
 
+
+<center>
+<img src="png/data_pipeline.png" style="width:70%">
+</center>
 
 ## Overview
 I learned R by taking *Data Science I* (P8105)  last semester which is taught by Dr. Jeff Goldsmith. In this course, I learnt how to do data manipulation and data visualization by R. Besides, I have taken Data Science Specialization on Cousera which is developed by Johns Hopkins University.
