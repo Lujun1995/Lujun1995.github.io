@@ -19,12 +19,19 @@ navbar:
         - text: "R"
           href: r.html
         - text: "SAS"
+          href: sas.html
         - text: "Python"
+          href: python.html
     - text: "Statistical Methods"
       menu:
+        - text: "Methods of Inference"
+          href: inference.html
         - text: "Generalized Linear Models"
+          href: generalized.html
         - text: "Survival Analysis"
+          href: survival.html
         - text: "Longitudinal Analysis"
+          href: long.html
       
   right:
     - text: "Resume"

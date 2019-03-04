@@ -28,7 +28,7 @@ I keep all my homework under my github account, because I find that it is useful
 
 ### DS I HW
 * HW 1 
-[Use R Markdown to write reproducible reports, GitHub for version](https://github.com/Lujun1995/p8105_hw1_jl5297/blob/master/p8105_hw1_jl5297.md)
+[Use R Markdown to write reproducible reports, GitHub for version control](https://github.com/Lujun1995/p8105_hw1_jl5297/blob/master/p8105_hw1_jl5297.md)
 
 * HW 2
 [Practice data wrangling and tidy data](https://github.com/Lujun1995/p8105_hw2_jl5297/blob/master/p8105_hw2_jl5297.md)

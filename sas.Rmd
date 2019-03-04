@@ -1,0 +1,42 @@
+---
+title: "SAS"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+<div style="margin-bottom:30px;">    
+</div>
+
+## Overview
+
+I'm taking *Statistical Computing with SAS* (P6110) taught by Dr. Jihui Lee this semester. I applied SAS to deal with experimental data before, but now I start from scratch.
+
+<div style="margin-bottom:30px;">    
+</div>
+
+## Under Construction ... ...
+
+## SAS HW
+
+All my SAS homework can be found under this [githup repo](https://github.com/Lujun1995/P86110_HW).
+
+- HW1
+    - Import the data by PROC IMPORT
+    - Label the data 
+    - Create formats
+    - Merge and stack
+- HW2
+    - 1
+    -
+- HW3
+    - 1
+    -
+- HW4
+    - 1
+- HW5
+    - Export data by PROC EXPORT / ODS
+    - Restructure longitudinal data by PROC TRANSPOSE / ARRAY
+    - Graphical visualization for longitudinal data by PPROC SGPLOT
+
+

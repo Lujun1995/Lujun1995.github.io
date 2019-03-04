@@ -1,0 +1,33 @@
+---
+title: "Python"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+<div style="margin-bottom:30px;">    
+</div>
+
+## Overview
+
+I learned Python through *Programming for Everybody (Getting Started with Python)* and *Applied Data Science with Python* on Cousera. I 
+
+<div style="margin-bottom:30px;">    
+</div>
+
+## Under Construction ... ...
+
+## Text Manipulation
+
+<div style="margin-bottom:30px;">    
+</div>
+
+## Web Scraping
+
+<div style="margin-bottom:30px;">    
+</div>
+
+## Data Science
+
+<div style="margin-bottom:30px;">    
+</div>
