@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Generalized Linear Models</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://hh2767.github.io/p8105_final.github.io/index.html">Phthalate-obesity</a>
+    </li>
+    <li>
+      <a href="cancer.html">Predict Cancer Mortality</a>
+    </li>
+    <li>
+      <a href="machinelearning.html">Machine Learning Finding Dononrs</a>
+    </li>
+    <li>
+      <a href="deeplearning.html">Deep Learning Images Classification </a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Programming
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="r.html">R</a>
+    </li>
+    <li>
+      <a href="sas.html">SAS</a>
+    </li>
+    <li>
+      <a href="python.html">Python</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Statistical Methods
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="inference.html">Methods of Inference</a>
+    </li>
+    <li>
+      <a href="generalized.html">Generalized Linear Models</a>
+    </li>
+    <li>
+      <a href="survival.html">Survival Analysis</a>
+    </li>
+    <li>
+      <a href="long.html">Longitudinal Analysis</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="resume.html">Resume</a>
+</li>
+<li>
+  <a href="mailto:&lt;jl5297@cumc.columbia.com&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/Lujun1995">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/jun-lu5297/">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Generalized Linear Models</h1>
+
+</div>
+
+
+<div id="linear-models" class="section level2">
+<h2>Linear Models</h2>
+<center>
+<span class="math inline">\(Y_{n\times1} = X_{n\times p}\beta_{p\times 1} + \epsilon_{n\times1}\)</span><br />
+where <span class="math inline">\(E(\epsilon_i) = 0\)</span> and <span class="math inline">\(var(\epsilon_i) = \sigma^2\)</span>
+</center>
+<div style="margin-bottom:40px;">
+
+</div>
+<div id="ordinary-least-squares" class="section level3">
+<h3>Ordinary Least Squares</h3>
+<p>OLS estimate of <span class="math inline">\(\beta\)</span>: <span class="math inline">\(\hat\beta = argmin_{\beta}||Y - X\beta||^2\)</span></p>
+<p><span class="math inline">\(\beta\)</span> satisfies the normal equation: <span class="math inline">\(X&#39;Y = X&#39;X\hat\beta\)</span>.</p>
+<p>If <span class="math inline">\(X&#39;X\)</span> is non-singular matrix, <span class="math inline">\(\hat\beta = (X&#39;X)^{-1}X&#39;Y\)</span></p>
+<ul>
+<li><span class="math inline">\(E(\hat{\beta} = \beta)\)</span></li>
+<li><span class="math inline">\(var(\hat\beta) = \sigma^2(X&#39;X)^{-1}\)</span></li>
+<li><span class="math inline">\(\hat\beta\)</span> is BLUE</li>
+<li><span class="math inline">\(RSS = ||Y - X\hat\beta||^2\)</span> then <span class="math inline">\(\hat{\sigma^2} = RSS/(n-p)\)</span> is unbiased for <span class="math inline">\(\sigma^2\)</span></li>
+</ul>
+<div style="margin-bottom:40px;">
+
+</div>
+</div>
+<div id="maximum-likelihood-estimation" class="section level3">
+<h3>Maximum Likelihood Estimation</h3>
+<p><span class="math inline">\(L(\beta, \sigma) =(2\pi\sigma^2)^{-n/2}exp\{-\frac{||Y - X\beta||^2}{2\sigma^2}\}\)</span></p>
+<ul>
+<li><span class="math inline">\(\hat\beta_{ML}= \hat\beta_{OLS}\)</span> with normal indep. errors</li>
+<li><span class="math inline">\(\hat\sigma_{ML}^2 = RSS/n\)</span> biased</li>
+</ul>
+<div style="margin-bottom:40px;">
+
+</div>
+</div>
+<div id="residuals-and-model-diagnostics" class="section level3">
+<h3>Residuals and Model Diagnostics</h3>
+<ul>
+<li><p>Residual <span class="math inline">\(\hat\epsilon = Y - X\hat\beta\)</span></p></li>
+<li><p>Variance of Residual: <span class="math inline">\(\sigma^2(I-H)\)</span></p></li>
+<li><p>Projection matrix H: <span class="math inline">\(H = X(X&#39;X)^{-1}X&#39;\)</span></p></li>
+<li><p><span class="math inline">\(\hat{Y} = HY\)</span></p></li>
+<li>Standardized residual: <span class="math inline">\(r_i = \frac{\hat\epsilon_i}{\hat\sigma(1-h_{ii})^{1/2}}\)</span></li>
+<li><p>The standardized residuals can be used to check the normality assumption, goodness-of-fit, and homoscedasticity.</p></li>
+</ul>
+<div style="margin-bottom:40px;">
+
+</div>
+</div>
+<div id="hypothesis-testing" class="section level3">
+<h3>Hypothesis Testing</h3>
+<p><strong>F-test</strong></p>
+<p>Nested Model</p>
+<p>Under <span class="math inline">\(H_0\)</span> <span class="math inline">\(RSS_0 = ||Y - X\hat\beta_0||^2\)</span></p>
+<p>Under the full model, <span class="math inline">\(RSS = ||Y - X\beta||^2\)</span></p>
+<p><span class="math inline">\(F = \frac{(RSS_0 - RSS)/q}{RSS/(n-p)}\)</span> ~ <span class="math inline">\(F_{q,n-p}\)</span></p>
+<div style="margin-bottom:40px;">
+
+</div>
+<p><strong>Likelihood ratio test</strong></p>
+<p><span class="math inline">\(\lambda = 2\{logL(\hat\beta, \hat\sigma) - logL(\hat\beta_0, \hat\sigma_0)\} = nlog(RSS_0/RSS)\)</span></p>
+<p><span class="math inline">\(\lambda\)</span> tends to a <span class="math inline">\(\chi^2\)</span> distribution when <span class="math inline">\(n \rightarrow \infty\)</span></p>
+<div style="margin-bottom:40px;">
+
+</div>
+</div>
+</div>
+<div id="logistic-regression" class="section level2">
+<h2>Logistic regression</h2>
+<div style="margin-bottom:40px;">
+
+</div>
+</div>
+<div id="multinomial-regression" class="section level2">
+<h2>Multinomial regression</h2>
+<div style="margin-bottom:40px;">
+
+</div>
+</div>
+<div id="poisson-regression" class="section level2">
+<h2>Poisson regression</h2>
+<div style="margin-bottom:40px;">
+
+</div>
+</div>
+<div id="contingency-table" class="section level2">
+<h2>Contingency table</h2>
+</div>
+<div id="related-codes" class="section level2">
+<h2>Related codes</h2>
+</div>
+
+<br><br>
+<footer>
+  <center>
+  <img src="png/stickers.png" alt="stickers" style="width:60%">
+  </center>
+  <br>
+  <p class="copyright text-muted" align="center">Copyright &copy; 2019 Jun Lu</p>
+</footer>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+---
+title: "Generalized Linear Models"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+## Linear Models
+<center>
+$Y_{n\times1} = X_{n\times p}\beta_{p\times 1} + \epsilon_{n\times1}$     
+where $E(\epsilon_i) = 0$ and $var(\epsilon_i) = \sigma^2$
+</center>
+
+<div style="margin-bottom:40px;">    
+</div>
+
+### Ordinary Least Squares
+OLS estimate of $\beta$: $\hat\beta = argmin_{\beta}||Y - X\beta||^2$
+
+$\beta$ satisfies the normal equation: $X'Y = X'X\hat\beta$. 
+
+If $X'X$ is non-singular matrix, $\hat\beta = (X'X)^{-1}X'Y$
+
+- $E(\hat{\beta} = \beta)$
+- $var(\hat\beta) = \sigma^2(X'X)^{-1}$
+- $\hat\beta$ is BLUE
+- $RSS = ||Y - X\hat\beta||^2$ then $\hat{\sigma^2} = RSS/(n-p)$ is unbiased for $\sigma^2$
+
+<div style="margin-bottom:40px;">    
+</div>
+
+### Maximum Likelihood Estimation
+$L(\beta, \sigma) =(2\pi\sigma^2)^{-n/2}exp\{-\frac{||Y - X\beta||^2}{2\sigma^2}\}$
+
+- $\hat\beta_{ML}= \hat\beta_{OLS}$ with normal indep. errors
+- $\hat\sigma_{ML}^2 = RSS/n$ biased
+
+<div style="margin-bottom:40px;">    
+</div>
+
+### Residuals and Model Diagnostics
+- Residual $\hat\epsilon = Y - X\hat\beta$
+
+- Variance of Residual: $\sigma^2(I-H)$ 
+
+- Projection matrix H: $H = X(X'X)^{-1}X'$
+
+- $\hat{Y} = HY$
+
+- Standardized residual: $r_i = \frac{\hat\epsilon_i}{\hat\sigma(1-h_{ii})^{1/2}}$
+- The standardized residuals can be used to check the normality assumption, goodness-of-fit, and homoscedasticity.
+
+<div style="margin-bottom:40px;">    
+</div>
+
+### Hypothesis Testing
+**F-test**
+
+Nested Model
+
+Under $H_0$ $RSS_0 = ||Y - X\hat\beta_0||^2$
+
+Under the full model, $RSS = ||Y - X\beta||^2$ 
+
+$F = \frac{(RSS_0 - RSS)/q}{RSS/(n-p)}$ ~ $F_{q,n-p}$
+
+<div style="margin-bottom:40px;">    
+</div>
+
+**Likelihood ratio test**
+
+$\lambda = 2\{logL(\hat\beta, \hat\sigma) - logL(\hat\beta_0, \hat\sigma_0)\} = nlog(RSS_0/RSS)$
+
+$\lambda$ tends to a $\chi^2$ distribution when $n \rightarrow \infty$
+
+<div style="margin-bottom:40px;">    
+</div>
+
+## Logistic regression
+
+<div style="margin-bottom:40px;">    
+</div>
+
+## Multinomial regression
+
+<div style="margin-bottom:40px;">    
+</div>
+
+## Poisson regression
+
+<div style="margin-bottom:40px;">    
+</div>
+
+## Contingency table
+
+## Related codes
+
+
