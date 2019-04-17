@@ -1,0 +1,29 @@
+---
+title: "Deep Learning"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+<div style="margin-bottom:30px;">    
+</div>
+
+
+<center>
+<img src="png/deep.png" style="width:70%">
+</center>
+
+## Overview
+
+I am learning deep learning on Cousera and Udacity. And I am also doing one research which involves the knowledge of deep learning.
+
+<div style="margin-bottom:30px;">    
+</div>
+
+
+## Projects
+* [Image Classifier Project](Image Classifier Project.html)
+
+## Research
+
+* Transfer Learning for Thyroid Cancer Classification in Histopathology Images (in progress)

@@ -1,0 +1,40 @@
+---
+title: "Machine Learning"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+<div style="margin-bottom:30px;">    
+</div>
+
+
+<center>
+<img src="png/machine.jpg" style="width:70%">
+</center>
+
+## Overview
+
+I learnt machine learning on Data Science II and some coures onCousera and Udacity. 
+Here are some projects I used to practice.
+
+<div style="margin-bottom:30px;">    
+</div>
+
+
+
+## Projects 
+
+### Supervised
+#### Regression
+* [Predict Soccer Goalkeepers' Values Using FIFA Video Game Data](https://github.com/Lujun1995/P8106-Midterm-Project/tree/master/results)
+
+#### Classification
+* [Finding Donors for CharityML](find_donor.html)
+
+
+<div style="margin-bottom:30px;">    
+</div>
+
+### Unsupervised
+* [Identify Customer Segments](unsurpvised.html)

@@ -5,14 +5,13 @@ navbar:
   left:
     - text: "Projects"
       menu:
-        - text: "Phthalate-obesity"
-          href: https://hh2767.github.io/p8105_final.github.io/index.html
-        - text: "Predict Cancer Mortality"
-          href: cancer.html
-        - text: "Machine Learning Finding Dononrs"
-          href: machinelearning.html
-        - text: "Deep Learning Images Classification "
+        - text: "Public Health"
+          href: public_health.html
+        - text: "Machine Learning"
+          href: machine_learning.html
+        - text: "Deep Learning"
           href: deeplearning.html
+          
         
     - text: "Programming"
       menu:
@@ -24,14 +23,14 @@ navbar:
           href: python.html
     - text: "Statistical Methods"
       menu:
-        - text: "Methods of Inference"
-          href: inference.html
         - text: "Generalized Linear Models"
           href: generalized.html
         - text: "Survival Analysis"
           href: survival.html
         - text: "Longitudinal Analysis"
           href: long.html
+        - text: "Methods of Inference"
+          href: inference.html
       
   right:
     - text: "Resume"

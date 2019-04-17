@@ -57,3 +57,14 @@ I keep all my homework under my github account, because I find that it is useful
 ### DS II HW
 * HW 1
 [Linear Model, Lasso, Ridge and Principal Component Regression](https://github.com/Lujun1995/DS_HW1_LinearRegression/blob/master/HW1.md)
+
+* HW 2
+[Non-linear models: Spline, GAM and MARS](https://github.com/Lujun1995/DS_HW2_Nonlinear/blob/master/HW2.md)
+
+* HW 3
+[Classification: Logistic, LDA, QDA, K-NN](https://github.com/Lujun1995/DS_HW3_Classification/blob/master/HW3.md)
+
+* HW4
+[Tree-based Models and Ensembel methods](https://github.com/Lujun1995/DS_HW4_TreeBased)
+
+
